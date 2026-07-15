@@ -32,9 +32,9 @@ public class LoginAdministrator extends javax.swing.JFrame {
         String AdminName = jTextField1.getText();
         String Adminpass = jPasswordField1.getText();
         
-         if(AdminName.equalsIgnoreCase(Admin) && Adminpass.equalsIgnoreCase(Adminpass)){
+         if(AdminName.equalsIgnoreCase(Admin) && Adminpass.equalsIgnoreCase(AdminPass)){
             JOptionPane.showMessageDialog(null, "Welcome Admin");
-            new Dashboard().show();
+            new UiAdmin().show();
             this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Wrong credentials");
@@ -73,6 +73,7 @@ public class LoginAdministrator extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Login");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, 98, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinic/CaisenLogo.png"))); // NOI18N
@@ -116,6 +117,10 @@ public class LoginAdministrator extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Systempass();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
